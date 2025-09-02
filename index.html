@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tank Battle 2D - Action-Packed Tank Combat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Game Container -->
+    <div id="gameContainer">
+        <!-- Header UI -->
+        <header class="game-header">
+            <div class="header-left">
+                <h1><i class="fas fa-chess-rook"></i> Tank Battle 2D</h1>
+            </div>
+            <div class="header-center">
+                <div class="score-display">
+                    <span class="score-label">Score:</span>
+                    <span id="score">0</span>
+                </div>
+                <div class="wave-display">
+                    <span class="wave-label">Wave:</span>
+                    <span id="wave">1</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="health-display">
+                    <i class="fas fa-heart"></i>
+                    <span id="health">100</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Game Canvas -->
+        <div class="game-area">
+            <canvas id="gameCanvas" width="1200" height="800"></canvas>
+            
+            <!-- Game Overlay -->
+            <div id="gameOverlay" class="game-overlay">
+                <div class="overlay-content">
+                    <h2 id="overlayTitle">Tank Battle 2D</h2>
+                    <p id="overlayMessage">Use WASD to move, mouse to aim, click to shoot!</p>
+                    <button id="startButton" class="game-button">
+                        <i class="fas fa-play"></i> Start Game
+                    </button>
+                    <button id="restartButton" class="game-button" style="display: none;">
+                        <i class="fas fa-redo"></i> Restart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Controls Info -->
+        <div class="controls-info">
+            <div class="control-group">
+                <i class="fas fa-keyboard"></i>
+                <span>WASD - Move Tank</span>
+            </div>
+            <div class="control-group">
+                <i class="fas fa-computer-mouse"></i>
+                <span>Mouse - Aim & Shoot</span>
+            </div>
+            <div class="control-group">
+                <i class="fas fa-space-shuttle"></i>
+                <span>Spacebar - Special Attack</span>
+            </div>
+            <div class="control-group">
+                <i class="fas fa-pause"></i>
+                <span>P - Pause Game</span>
+            </div>
+        </div>
+
+        <!-- Mini Map -->
+        <div class="minimap-container">
+            <h3>Radar</h3>
+            <canvas id="minimap" width="200" height="200"></canvas>
+        </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="tank-loader">
+                <i class="fas fa-chess-rook"></i>
+            </div>
+            <h2>Loading Tank Battle...</h2>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/game.js"></script>
+    <script src="js/tank.js"></script>
+    <script src="js/projectile.js"></script>
+    <script src="js/enemy.js"></script>
+    <script src="js/powerup.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
